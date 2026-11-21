@@ -105,7 +105,7 @@ export function FloatingAction() {
             aria-expanded={open}
             aria-controls="quick-actions"
             aria-label={open ? 'Close quick contact menu' : 'Open quick contact menu'}
-            className="group relative flex h-16 items-center gap-3 rounded-full bg-berry pl-2 pr-6 text-ivory shadow-[0_18px_40px_-14px_rgba(163,58,99,0.8)] transition-colors duration-500 hover:bg-plum"
+            className={`group relative flex h-16 items-center rounded-full bg-berry p-2 text-ivory shadow-[0_18px_40px_-14px_rgba(163,58,99,0.8)] transition-[background-color,padding] duration-500 ease-[var(--ease-editorial)] hover:bg-plum hover:pr-6 focus-visible:pr-6 ${open ? 'pr-6' : ''}`}
             initial={{ opacity: 0, y: 30, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 30, scale: 0.8 }}
@@ -132,7 +132,19 @@ export function FloatingAction() {
                 </motion.span>
               </AnimatePresence>
             </span>
-            <span className="label-ui relative text-[0.68rem]">{open ? 'Close' : 'Work with me'}</span>
+            {/* Label: collapsed to a circle at rest, slides open on hover / keyboard focus / while the menu is open */}
+            <span
+              aria-hidden="true"
+              className={`relative grid transition-[grid-template-columns] duration-500 ease-[var(--ease-editorial)] group-hover:grid-cols-[1fr] group-focus-visible:grid-cols-[1fr] ${
+                open ? 'grid-cols-[1fr]' : 'grid-cols-[0fr]'
+              }`}
+            >
+              <span className="overflow-hidden">
+                <span className="label-ui block whitespace-nowrap pl-3 text-[0.68rem] opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:delay-150 group-focus-visible:opacity-100 group-[[aria-expanded=true]]:opacity-100">
+                  {open ? 'Close' : 'Work with me'}
+                </span>
+              </span>
+            </span>
           </motion.button>
         )}
       </AnimatePresence>
