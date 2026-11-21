@@ -23,6 +23,7 @@ const today = new Date().toISOString().slice(0, 10)
 const pages = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
   { path: '/about', priority: '0.9', changefreq: 'monthly' },
+  { path: '/influence', priority: '0.9', changefreq: 'monthly' },
   { path: '/speaking', priority: '0.9', changefreq: 'monthly' },
   { path: '/masterclasses', priority: '0.8', changefreq: 'monthly' },
   { path: '/insights', priority: '0.8', changefreq: 'weekly' },

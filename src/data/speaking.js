@@ -1,43 +1,18 @@
-// Speaking topics are PROPOSED themes awaiting confirmation by the brand owner.
+// Signature speaking topics, as supplied by the brand owner. The first is the flagship.
 export const speakingTopics = [
   {
-    id: 'digital-transformation',
-    title: 'Digital Transformation',
-    description:
-      'Why transformation is a people story before it is a technology story, and what leaders must unlearn to move forward.',
-    status: 'proposed',
+    id: 'social-capital-method',
+    title: 'The Social Capital Method™',
+    subtitle: 'Building Visibility, Relationships and Influence That Move You Forward.',
+    flagship: true,
   },
-  {
-    id: 'women-in-leadership',
-    title: 'Women in Leadership',
-    description: 'Taking up space with intention: authority, visibility and building the rooms we want to be in.',
-    status: 'proposed',
-  },
-  {
-    id: 'innovation-entrepreneurship',
-    title: 'Innovation & Entrepreneurship',
-    description: 'From idea to impact: practical courage, smart risk and the discipline behind creative ventures.',
-    status: 'proposed',
-  },
-  {
-    id: 'personal-branding',
-    title: 'Personal Branding & Digital Influence',
-    description: 'Building a credible, magnetic presence online without losing what makes you real.',
-    status: 'proposed',
-  },
-  {
-    id: 'future-of-work',
-    title: 'The Future of Work',
-    description: 'Skills, structures and mindsets for a working world being rewritten in real time.',
-    status: 'proposed',
-  },
-  {
-    id: 'technology-human-potential',
-    title: 'Technology & Human Potential',
-    description:
-      'AI is an amplifier: a tool, an assistant. It is not wisdom, character or human connection. Why the AI revolution will not replace you, and how to lead it.',
-    status: 'proposed',
-  },
+  { id: 'beyond-networking', title: 'Beyond Networking', subtitle: 'Turning Relationships into Strategic Advantage.' },
+  { id: 'right-rooms', title: 'The Power of Being in the Right Rooms', subtitle: 'Understanding access, influence and opportunity.' },
+  { id: 'connections-opportunities', title: 'From Connections to Opportunities', subtitle: 'Monetising Your Social Capital.' },
+  { id: 'visibility-currency', title: 'Visibility Is Currency', subtitle: 'Becoming Known for What You Bring.' },
+  { id: 'relational-intelligence', title: 'Relational Intelligence', subtitle: 'The Competitive Advantage in Business and Leadership.' },
+  { id: 'networks-open-doors', title: 'Building Networks That Open Doors and Move Decisions', subtitle: 'The strategic power of relationships in business.' },
+  { id: 'digital-advantage', title: 'The Digital Advantage', subtitle: 'Leveraging AI, Marketing and Storytelling for Business Growth.' },
 ]
 
 export const speakingFormats = [
@@ -62,19 +37,21 @@ export const speakingFormats = [
   },
   {
     id: 'workshops',
-    title: 'Workshops & Conferences',
+    title: 'Corporate Training & Workshops',
     description:
       'Interactive, practical sessions where audiences leave with frameworks they can use the next morning.',
     detail: '[Half-day and full-day formats]',
   },
 ]
 
-// Featured engagements, taken from the supplied event photography and video.
-// Event names are as shown in the material; dates and roles still need confirming.
+// Featured engagements, from the supplied photography, video and the brand owner's list of roles.
 export const featuredEngagements = [
-  { id: 'e1', event: 'AD-Day Zambia', role: 'Speaker', topic: 'Advertising, branding & media', date: '[Date to confirm]', location: 'Zambia' },
-  { id: 'e2', event: 'IMM Marketers Conference & Excellence Awards', role: 'Speaker', topic: 'Innovation & technology', date: '2024', location: 'Malawi' },
+  { id: 'e6', event: 'Tech Fusion 2025', role: 'Curator & host', topic: 'Technology, creativity & business growth', date: '2025', location: '' },
+  { id: 'e5', event: 'Women in Financial Markets Indaba', role: 'Moderator', topic: 'Inclusion & leadership in finance', date: '2025', location: '' },
   { id: 'e3', event: '5th IMM Conference & Marketing Excellence Awards', role: 'On stage', topic: 'Marketing excellence', date: '2025', location: 'Malawi' },
-  { id: 'e4', event: 'ZimTrade', role: 'Panellist', topic: 'Exporting', date: '[Date to confirm]', location: 'Zimbabwe' },
-  { id: 'e5', event: 'Women in Financial Markets Conference', role: 'Panellist', topic: 'Women in leadership', date: '[Date to confirm]', location: '[Location to confirm]' },
+  { id: 'e7', event: 'Malawi Marketing Excellence Awards', role: 'Judge', topic: 'Marketing innovation & brand strategy', date: '2024 & 2025', location: 'Malawi' },
+  { id: 'e2', event: 'IMM Marketers Conference & Excellence Awards', role: 'Speaker', topic: 'Innovation & technology', date: '2024', location: 'Malawi' },
+  { id: 'e8', event: 'Major Advertising Conference', role: 'Headline speaker', topic: 'Alongside Vusi Thembekwayo & Jeremy Maggs', date: '2023', location: 'Zambia' },
+  { id: 'e1', event: 'AD-Day Zambia', role: 'Speaker', topic: 'Advertising, branding & media', date: '', location: 'Zambia' },
+  { id: 'e4', event: 'ZimTrade Conference', role: 'Panellist', topic: 'Trade, marketing & digital transformation', date: '', location: 'Zimbabwe' },
 ]

@@ -89,7 +89,7 @@ export default function Contact() {
   }
 
   const categoryLabel = enquiryCategories.find((c) => c.value === values.category)?.label ?? 'General Enquiries'
-  const mailto = buildMailto(values.category === 'speaking' ? contact.bookingsEmail : values.category === 'media' ? contact.mediaEmail : contact.email, {
+  const mailto = buildMailto(contact.email, {
     ...values,
     category: categoryLabel,
   })
@@ -129,7 +129,7 @@ export default function Contact() {
     <>
       <Seo
         title="Contact"
-        description="Work with Tafadzwa L. Gotora (Digital Bae): speaking bookings, partnerships, masterclasses, media and general enquiries."
+        description="Work with Taffy L. Gotora (Digital Bae): speaking bookings, partnerships, masterclasses, media and general enquiries."
       />
 
       <PageHero
@@ -146,21 +146,22 @@ export default function Contact() {
             <div className="border-t border-plum/15 pt-8">
               <div className="mb-6 flex items-center justify-between gap-4">
                 <h2 className="text-2xl">Details</h2>
-                {contact.placeholder && <SampleBadge>Placeholder</SampleBadge>}
+                {contact.placeholder && <SampleBadge>Some details to confirm</SampleBadge>}
               </div>
               <ul className="space-y-6 text-charcoal/80">
                 <li className="flex gap-4">
                   <Mail aria-hidden="true" strokeWidth={1.25} className="mt-0.5 h-5 w-5 shrink-0 text-berry" />
                   <div className="space-y-1 text-sm">
-                    <p><span className="text-charcoal/70">General: </span><a className="link-underline" href={`mailto:${contact.email}`}>{contact.email}</a></p>
-                    <p><span className="text-charcoal/70">Speaking: </span><a className="link-underline" href={`mailto:${contact.bookingsEmail}`}>{contact.bookingsEmail}</a></p>
-                    <p><span className="text-charcoal/70">Media: </span><a className="link-underline" href={`mailto:${contact.mediaEmail}`}>{contact.mediaEmail}</a></p>
+                    <p><a className="link-underline text-base text-plum" href={`mailto:${contact.email}`}>{contact.email}</a></p>
+                    <p className="text-charcoal/70">Speaking, advisory, training, media and partnerships</p>
                   </div>
                 </li>
-                <li className="flex gap-4 text-sm">
-                  <MapPin aria-hidden="true" strokeWidth={1.25} className="h-5 w-5 shrink-0 text-berry" />
-                  {contact.location}
-                </li>
+                {contact.location && (
+                  <li className="flex gap-4 text-sm">
+                    <MapPin aria-hidden="true" strokeWidth={1.25} className="h-5 w-5 shrink-0 text-berry" />
+                    {contact.location}
+                  </li>
+                )}
                 <li className="flex gap-4 text-sm">
                   <Clock aria-hidden="true" strokeWidth={1.25} className="h-5 w-5 shrink-0 text-berry" />
                   {contact.responseTime}

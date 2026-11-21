@@ -99,7 +99,7 @@ export default function Article() {
           description: article.excerpt,
           datePublished: article.date,
           articleSection: article.category,
-          author: { '@type': 'Person', name: 'Tafadzwa L. Gotora' },
+          author: { '@type': 'Person', name: 'Taffy L. Gotora' },
           publisher: { '@type': 'Organization', name: 'Digital Bae' },
         }}
       />

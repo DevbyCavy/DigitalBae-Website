@@ -14,7 +14,7 @@ export const personJsonLd = () => ({
   description: site.description,
   url: base(),
   image: `${base()}/images/portrait-seated.jpg`,
-  sameAs: socialLinks.filter((s) => !s.placeholder).map((s) => s.href),
+  sameAs: socialLinks.map((s) => s.href),
 })
 
 /**
@@ -26,7 +26,7 @@ export function Seo({
   title,
   description = site.description,
   image = site.defaultOgImage,
-  imageAlt = 'Digital Bae: Tafadzwa L. Gotora, author, digital marketer and speaker',
+  imageAlt = 'Digital Bae: Taffy L. Gotora, author, digital marketer and speaker',
   type = 'website',
   noindex = false,
   article, // { publishedTime, section }

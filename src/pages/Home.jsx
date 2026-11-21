@@ -13,7 +13,7 @@ import { EventPhoto } from '../components/sections/EventPhoto'
 import { VideoCard } from '../components/sections/VideoCard'
 import { portraits, owner } from '../data/site'
 import { eventPhotos, videos, heroVideo, seenAt } from '../data/media'
-import { expertise } from '../data/expertise'
+import { expertise, positioning } from '../data/expertise'
 import { speakingTopics } from '../data/speaking'
 import { articles } from '../data/articles'
 import { masterclasses } from '../data/masterclasses'
@@ -111,8 +111,8 @@ function Hero() {
 
             <motion.div initial={{ opacity: 0.001, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.3 }}>
               <p className="mt-7 max-w-lg text-base leading-relaxed text-ivory/80 md:text-[1.075rem]">
-                A voice at the intersection of digital transformation, leadership, innovation and personal growth,
-                helping ambitious people and organisations lead the change they want to see.
+                <span className="font-semibold text-ivory">{positioning.line}</span> Helping people and organisations
+                build relevance, command visibility, cultivate influence and turn intelligence and relationships into opportunity.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button to="/contact" variant="light">Work With Me</Button>
@@ -207,18 +207,18 @@ function Introduction() {
           <Reveal>
             <Eyebrow className="mb-6">The Brand</Eyebrow>
             <h2 className="text-headline">
-              Technology meets <em>humanity</em>
+              Influence, <em>with impact</em>
             </h2>
           </Reveal>
           <Reveal delay={0.1} as="p" className="mt-8 font-serif text-[clamp(1.5rem,2.4vw,2.1rem)] leading-[1.25] text-plum">
-            Digital Bae is a platform for the <em className="text-berry">curious, the courageous</em> and the quietly ambitious,
-            where bold ideas become real-world impact.
+            Visibility without strategy is simply noise. Digital Bae turns <em className="text-berry">expertise into influence</em>,
+            connections into opportunities and ideas into measurable outcomes.
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-6 max-w-xl leading-relaxed text-charcoal/75">
               Digital Bae is the platform of <strong className="font-semibold text-plum">{owner.name}</strong>: {owner.credentials.toLowerCase()}.
-              Through keynotes, masterclasses and writing, she helps leaders, teams and professionals make sense of a
-              digital world in motion, and find their own confident voice within it.
+              Through executive advisory, speaking, corporate training and strategic partnerships, she helps individuals,
+              brands and organisations strengthen their positioning, build credibility and unlock opportunities.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button to="/about" variant="outline">Read the full story</Button>
@@ -238,10 +238,10 @@ function Expertise() {
       <Glow className="opacity-80" />
       <Container className="relative">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
-          <SectionHeading eyebrow="Areas of Expertise" title={<span id="expertise-title">Where ideas meet <em>impact</em></span>} />
-          <Button to="/speaking" variant="text" className="self-start md:self-auto">Speaking topics</Button>
+          <SectionHeading eyebrow="Areas of Influence" title={<span id="expertise-title">The six <em>pillars</em></span>} intro={positioning.line} />
+          <Button to="/influence" variant="text" className="self-start md:self-auto">Explore the pillars</Button>
         </div>
-        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {expertise.map((item) => (
             <RevealItem
               key={item.id}
@@ -249,7 +249,8 @@ function Expertise() {
             >
               <span aria-hidden="true" className="absolute -right-16 -top-16 h-40 w-40 rounded-full bg-berry/0 blur-2xl transition-colors duration-700 group-hover:bg-berry/25" />
               <span className="display text-3xl text-berry/90">{item.number}</span>
-              <h3 className="mt-10 text-[1.75rem] leading-tight">{item.title}</h3>
+              <h3 className="mt-10 text-[1.45rem] leading-tight">{item.title}</h3>
+              {item.signature && <p className="eyebrow mt-4 self-start rounded-full bg-plum px-3 py-1.5 !text-[0.58rem] text-blush">{item.signature}</p>}
               <p className="mt-3 leading-relaxed text-charcoal/70">{item.summary}</p>
             </RevealItem>
           ))}
@@ -267,9 +268,9 @@ function FeaturedSpeaking() {
       <Container className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <SectionHeading
-            eyebrow="Speaking"
+            eyebrow="Signature Speaking Topics"
             title={<span id="speaking-title">On stage, with <em>intention</em></span>}
-            intro="Keynotes, panels and workshops that leave audiences informed, energised and ready to act."
+            intro="Led by the flagship keynote and masterclass, The Social Capital Method™: building visibility, relationships and influence that move you forward."
           />
           <Reveal delay={0.1} className="mt-10">
             <Button to="/speaking" variant="outline">Speaking topics &amp; formats</Button>
@@ -277,13 +278,14 @@ function FeaturedSpeaking() {
         </div>
 
         <ul className="lg:col-span-7">
-          {speakingTopics.slice(0, 4).map((topic, i) => (
+          {speakingTopics.slice(0, 5).map((topic, i) => (
             <Reveal as="li" key={topic.id} delay={i * 0.05} className="border-b border-plum/10 first:border-t">
               <Link to="/speaking" className="group flex items-center justify-between gap-6 rounded-2xl px-2 py-6 transition-colors duration-500 hover:bg-mist md:px-4">
                 <span className="flex items-baseline gap-5">
                   <span className="eyebrow text-berry">0{i + 1}</span>
-                  <span className="font-serif text-2xl text-plum transition-transform duration-500 ease-[var(--ease-editorial)] group-hover:translate-x-2 md:text-[2rem]">
-                    {topic.title}
+                  <span className="transition-transform duration-500 ease-[var(--ease-editorial)] group-hover:translate-x-2">
+                    <span className="block font-serif text-2xl text-plum md:text-[2rem]">{topic.title}</span>
+                    <span className="mt-1 block text-sm text-charcoal/70">{topic.subtitle}</span>
                   </span>
                 </span>
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-plum/15 text-plum transition-all duration-500 group-hover:border-berry group-hover:bg-berry group-hover:text-ivory">
@@ -404,8 +406,8 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="Tafadzwa L. Gotora, Digital Marketer & Speaker"
-        description="The platform of Tafadzwa L. Gotora: author, multi-award-winning digital marketer and speaker on digital transformation, leadership and personal branding."
+        title="Taffy L. Gotora, Strategist, Speaker & Author"
+        description="Digital Bae, the platform of Taffy L. Gotora: where digital intelligence meets strategic influence. Speaking, executive advisory, corporate training and The Social Capital Method™."
         jsonLd={personJsonLd()}
       />
       <Hero />

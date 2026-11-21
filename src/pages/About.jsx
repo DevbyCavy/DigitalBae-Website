@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Seo, personJsonLd } from '../components/ui/Seo'
-import { Container, Eyebrow, SectionHeading, SampleBadge, Ornament, Glow } from '../components/ui/primitives'
+import { Container, Eyebrow, SectionHeading, Ornament, Glow } from '../components/ui/primitives'
 import { Reveal, RevealGroup, RevealItem } from '../components/ui/Reveal'
 import { Portrait } from '../components/ui/Portrait'
 import { CtaBanner } from '../components/sections/CtaBanner'
@@ -8,6 +8,8 @@ import { portraits, owner } from '../data/site'
 import { recognition } from '../data/media'
 import { about } from '../data/about'
 import { expertise } from '../data/expertise'
+import { honours, leadershipRoles } from '../data/recognition'
+import { Link } from 'react-router-dom'
 
 const ease = [0.22, 1, 0.36, 1]
 
@@ -16,7 +18,7 @@ export default function About() {
     <>
       <Seo
         title="About"
-        description="Meet Tafadzwa L. Gotora, the author, multi-award-winning digital marketer and speaker behind Digital Bae: her story, values and recognition."
+        description="Meet Taffy L. Gotora, the strategic digital marketing executive, author and speaker behind Digital Bae: her journey, honours, awards and leadership roles."
         jsonLd={personJsonLd()}
       />
 
@@ -71,7 +73,6 @@ export default function About() {
             <Reveal className="mt-16">
               <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                 <h2 className="text-2xl">Biography</h2>
-                <SampleBadge>Biography in progress</SampleBadge>
               </div>
               <div className="space-y-5 text-[1.075rem] leading-[1.85] text-charcoal/80">
                 {about.biography.map((p) => (
@@ -105,12 +106,12 @@ export default function About() {
         </Container>
       </section>
 
-      {/* Career journey */}
+      {/* Career journey: hidden until real entries are added in src/data/about.js */}
+      {about.journey.length > 0 && (
       <section className="py-24 md:py-32">
         <Container className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-4">
             <SectionHeading eyebrow="Career Journey" title={<>The path <em>so far</em></>} />
-            <SampleBadge className="mt-8">Placeholder timeline</SampleBadge>
           </div>
           <ol className="relative lg:col-span-7 lg:col-start-6">
             <span aria-hidden="true" className="absolute bottom-2 left-[5px] top-2 w-px bg-plum/15" />
@@ -125,19 +126,23 @@ export default function About() {
           </ol>
         </Container>
       </section>
+      )}
 
       {/* Expertise + milestones */}
       <section className="on-dark grain relative overflow-hidden bg-plum py-24 text-ivory md:py-32">
         <div aria-hidden="true" className="absolute -right-32 top-20 h-[30rem] w-[30rem] rounded-full bg-berry/35 blur-3xl" />
         <div aria-hidden="true" className="absolute -left-32 bottom-20 h-96 w-96 rounded-full bg-rose/20 blur-3xl" />
         <Container className="relative">
-          <SectionHeading tone="light" eyebrow="Areas of Expertise" title={<>Fluent in <em className="text-blush">change</em></>} />
-          <RevealGroup className="mt-14 grid gap-x-10 gap-y-8 md:grid-cols-2">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <SectionHeading tone="light" eyebrow="Areas of Influence" title={<>The six <em className="text-blush">pillars</em></>} />
+            <Link to="/influence" className="label-ui self-start text-[0.7rem] text-blush hover:text-ivory md:self-auto">Explore the pillars &rarr;</Link>
+          </div>
+          <RevealGroup className="mt-14 grid gap-x-10 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
             {expertise.map((e) => (
               <RevealItem key={e.id} className="glass-dark flex gap-6 rounded-[1.75rem] p-7">
                 <span className="display text-lg text-berry-soft">{e.number}</span>
                 <div>
-                  <h3 className="text-2xl text-ivory">{e.title}</h3>
+                  <h3 className="text-xl text-ivory">{e.title}</h3>
                   <p className="mt-2 leading-relaxed text-ivory/70">{e.summary}</p>
                 </div>
               </RevealItem>
@@ -148,25 +153,24 @@ export default function About() {
             <Reveal className="md:col-span-5">
               <figure>
                 <Portrait image={recognition.evening} className="aspect-[4/5] rounded-[2rem]" position="center 25%" sizes="(min-width: 768px) 40vw, 100vw" />
-                <figcaption className="mt-3 text-sm text-ivory/60">Recognised at an awards evening [event to confirm]</figcaption>
+                <figcaption className="mt-3 text-sm text-ivory/70">Recognised at an awards evening [event to confirm]</figcaption>
               </figure>
             </Reveal>
             <Reveal delay={0.1} className="flex flex-col justify-end md:col-span-7">
               <p className="eyebrow mb-4 text-berry-soft">Recognition</p>
               <p className="font-serif text-3xl leading-snug text-ivory md:text-4xl">
-                A multi-award-winning digital marketer, with work recognised by peers across the industry.
+                Digital Marketing Practitioner of the Year, one of Zimbabwe&rsquo;s 50 Most Inspirational Women, and a judge of the Malawi Marketing Excellence Awards.
               </p>
               <figure className="mt-10">
                 <Portrait image={recognition.shelf} className="aspect-[1152/532] rounded-[1.5rem]" sizes="(min-width: 768px) 55vw, 100vw" />
-                <figcaption className="mt-3 text-sm text-ivory/60">Certificates and awards [names to confirm]</figcaption>
+                <figcaption className="mt-3 text-sm text-ivory/70">Certificates and awards</figcaption>
               </figure>
             </Reveal>
           </div>
 
           <div className="mt-24">
             <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
-              <p className="eyebrow text-berry-soft">Achievements &amp; Milestones</p>
-              <SampleBadge tone="dark">Awaiting confirmed milestones</SampleBadge>
+              <p className="eyebrow text-berry-soft">At a glance</p>
             </div>
             <RevealGroup as="dl" className="grid grid-cols-2 gap-4 lg:grid-cols-4">
               {about.milestones.map((m, i) => (
@@ -174,6 +178,46 @@ export default function About() {
                   <dt className="sr-only">{m.label}</dt>
                   <dd className="display text-3xl text-blush md:text-[2.6rem]">{m.figure}</dd>
                   <dd className="mt-3 text-sm leading-snug text-ivory/70">{m.label}</dd>
+                </RevealItem>
+              ))}
+            </RevealGroup>
+          </div>
+        </Container>
+      </section>
+
+      {/* Honours & awards + leadership roles */}
+      <section className="relative overflow-hidden bg-mist py-24 md:py-32" aria-labelledby="honours-title">
+        <Glow />
+        <Container className="relative grid gap-16 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <SectionHeading eyebrow="Honours & Awards" title={<span id="honours-title">Recognised for <em>the work</em></span>} />
+            <ol className="mt-12">
+              {honours.map((h, i) => (
+                <Reveal as="li" key={h.title} delay={i * 0.03} className="grid gap-3 border-t border-plum/15 py-7 last:border-b sm:grid-cols-[7rem_1fr] sm:gap-6">
+                  <p className="eyebrow pt-1.5 text-berry">{h.date}</p>
+                  <div>
+                    <h3 className="text-xl leading-snug md:text-2xl">{h.title}</h3>
+                    <p className="mt-1 text-sm font-semibold text-plum/85">
+                      {h.issuer}
+                      {h.associated && <span className="font-normal text-charcoal/70"> &middot; Associated with {h.associated}</span>}
+                    </p>
+                    <p className="mt-3 leading-relaxed text-charcoal/75">{h.note}</p>
+                  </div>
+                </Reveal>
+              ))}
+            </ol>
+          </div>
+          <div className="lg:col-span-5">
+            <SectionHeading eyebrow="Leadership & Industry" title={<>Roles &amp; <em>platforms</em></>} />
+            <RevealGroup as="ul" className="mt-12 space-y-4">
+              {leadershipRoles.map((r) => (
+                <RevealItem as="li" key={r.title + r.org} className="glass rounded-[1.75rem] p-6">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h3 className="text-lg leading-snug">{r.title}</h3>
+                    {r.period && <span className="eyebrow !text-[0.6rem] text-berry">{r.period}</span>}
+                  </div>
+                  <p className="mt-1 font-serif text-xl italic text-plum">{r.org}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-charcoal/75">{r.text}</p>
                 </RevealItem>
               ))}
             </RevealGroup>

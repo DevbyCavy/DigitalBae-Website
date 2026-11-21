@@ -32,7 +32,7 @@ export function MasterclassCard({ course, index = 0, variant = 'default' }) {
           >
             {masterclassStatus[course.status]}
           </span>
-          <SampleBadge tone={isFeature ? 'dark' : 'light'}>Placeholder course</SampleBadge>
+          {course.placeholder && <SampleBadge tone={isFeature ? 'dark' : 'light'}>Placeholder course</SampleBadge>}
         </div>
       </div>
 
@@ -40,15 +40,17 @@ export function MasterclassCard({ course, index = 0, variant = 'default' }) {
       <h3 className={`relative leading-[1.02] ${isFeature ? 'text-[2.6rem] !text-ivory md:text-[3.4rem]' : 'text-3xl md:text-[2.3rem]'}`}>{course.title}</h3>
       <p className={`relative mt-5 max-w-xl leading-relaxed ${isFeature ? 'text-lg text-ivory/75' : 'text-charcoal/70'}`}>{course.summary}</p>
 
-      <dl className={`relative mt-8 grid grid-cols-2 gap-4 rounded-2xl p-5 text-sm ${isFeature ? 'glass-dark' : 'bg-white/60'}`}>
+      <dl className={`relative mt-8 grid gap-4 rounded-2xl p-5 text-sm ${course.duration ? 'grid-cols-2' : 'grid-cols-1'} ${isFeature ? 'glass-dark' : 'bg-white/60'}`}>
         <div>
           <dt className={`eyebrow mb-1 !text-[0.6rem] ${isFeature ? 'text-ivory/60' : 'text-plum/75'}`}>Format</dt>
           <dd>{course.format}</dd>
         </div>
-        <div>
-          <dt className={`eyebrow mb-1 !text-[0.6rem] ${isFeature ? 'text-ivory/60' : 'text-plum/75'}`}>Duration</dt>
-          <dd>{course.duration}</dd>
-        </div>
+        {course.duration && (
+          <div>
+            <dt className={`eyebrow mb-1 !text-[0.6rem] ${isFeature ? 'text-ivory/60' : 'text-plum/75'}`}>Duration</dt>
+            <dd>{course.duration}</dd>
+          </div>
+        )}
       </dl>
 
       <div className="relative mt-8 flex-1">

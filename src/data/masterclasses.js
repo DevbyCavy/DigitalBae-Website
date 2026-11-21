@@ -1,14 +1,32 @@
-// Masterclasses: PLACEHOLDER courses marked "Coming soon" until real offerings are confirmed.
+// Masterclasses. The Social Capital Method is the brand owner's flagship; the rest are PLACEHOLDER
+// courses (placeholder: true) until real offerings are confirmed.
 // No payments are processed on this site. Registration is by enquiry only.
 export const masterclasses = [
   {
+    id: 'social-capital-method',
+    title: 'The Social Capital Method™',
+    category: 'Flagship Masterclass',
+    format: 'Keynote or corporate masterclass',
+    duration: '', // add when confirmed; hidden while empty
+    status: 'enquire',
+    featured: true,
+    summary: 'Building visibility, relationships and influence that move you forward. Taffy’s signature method for turning connections into opportunities and relationships into strategic advantage.',
+    outcomes: [
+      'Go beyond networking to strategic relationship building',
+      'Turn connections into opportunities',
+      'Understand the power of being in the right rooms',
+      'Monetise your social capital',
+      'Build networks that open doors and move decisions',
+    ],
+  },
+  {
     id: 'digital-presence',
+    placeholder: true,
     title: 'The Intentional Digital Presence',
     category: 'Personal Branding',
     format: '[Online, live]',
     duration: '[4 sessions]',
     status: 'coming-soon',
-    featured: true,
     summary:
       'Build a personal brand that feels unmistakably you, and works as hard as you do. A structured journey from clarity to visibility.',
     outcomes: [
@@ -20,6 +38,7 @@ export const masterclasses = [
   },
   {
     id: 'leading-change',
+    placeholder: true,
     title: 'Leading Through Digital Change',
     category: 'Leadership',
     format: '[Online or in-person]',
@@ -35,6 +54,7 @@ export const masterclasses = [
   },
   {
     id: 'future-ready',
+    placeholder: true,
     title: 'Future-Ready: Skills for the New World of Work',
     category: 'Future of Work',
     format: '[Self-paced]',
@@ -50,6 +70,7 @@ export const masterclasses = [
   },
   {
     id: 'founder-voice',
+    placeholder: true,
     title: 'The Founder’s Voice',
     category: 'Entrepreneurship',
     format: '[Cohort-based]',
@@ -67,6 +88,7 @@ export const masterclasses = [
 
 export const masterclassStatus = {
   'coming-soon': 'Coming soon',
+  enquire: 'Booking by enquiry',
   open: 'Enrolment open',
   waitlist: 'Join the waitlist',
 }

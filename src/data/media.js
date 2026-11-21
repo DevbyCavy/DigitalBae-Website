@@ -13,35 +13,35 @@ export function photo(name, alt, label = '') {
 export const eventPhotos = [
   {
     id: 'ad-day-zambia',
-    image: photo('event-ad-day-zambia', 'Tafadzwa speaking at a podium on stage at AD-Day Zambia, presented by Africast'),
+    image: photo('event-ad-day-zambia', 'Taffy speaking at a podium on stage at AD-Day Zambia, presented by Africast'),
     event: 'AD-Day Zambia',
     detail: 'Presented by Africast',
     role: 'Speaker',
   },
   {
     id: 'imm-2024',
-    image: photo('event-imm-2024', 'Tafadzwa addressing the audience with a microphone at the Institute of Marketing in Malawi 2024 conference'),
+    image: photo('event-imm-2024', 'Taffy addressing the audience with a microphone at the Institute of Marketing in Malawi 2024 conference'),
     event: 'Institute of Marketing in Malawi',
     detail: '2024 Marketers Conference & Excellence Awards',
     role: 'Speaker',
   },
   {
     id: 'zimtrade',
-    image: photo('event-zimtrade-panel', 'Tafadzwa speaking on a panel at a ZimTrade exporting event'),
+    image: photo('event-zimtrade-panel', 'Taffy speaking on a panel at a ZimTrade exporting event'),
     event: 'ZimTrade',
     detail: 'Exporting panel discussion',
     role: 'Panellist',
   },
   {
     id: 'women-financial-markets',
-    image: photo('event-women-financial-markets', 'Speaking on a panel at the Women in Financial Markets Conference'),
-    event: 'Women in Financial Markets Conference',
-    detail: 'Panel discussion',
-    role: 'Panellist',
+    image: photo('event-women-financial-markets', 'Speaking on a panel at the Women in Financial Markets event'),
+    event: 'Women in Financial Markets',
+    detail: 'Panel on inclusion and leadership in finance',
+    role: 'Panel',
   },
   {
     id: 'imm-podium',
-    image: photo('event-imm-podium', 'Tafadzwa at the podium at Sunbird Nkopola Lodge during the Institute of Marketing in Malawi conference'),
+    image: photo('event-imm-podium', 'Taffy at the podium at Sunbird Nkopola Lodge during the Institute of Marketing in Malawi conference'),
     event: 'IMM Conference, Sunbird Nkopola Lodge',
     detail: 'Innovate: leveraging technology',
     role: 'Speaker',
@@ -56,7 +56,7 @@ export const eventPhotos = [
 ]
 
 export const recognition = {
-  evening: photo('awards-evening', 'Tafadzwa holding an award at an awards evening, standing with two guests'),
+  evening: photo('awards-evening', 'Taffy holding an award at an awards evening, standing with two guests'),
   shelf: photo('awards-shelf', 'A shelf of framed certificates and award trophies'),
 }
 
@@ -94,7 +94,9 @@ export const seenAt = [
   'AD-Day Zambia',
   'Institute of Marketing in Malawi',
   'IMM Marketing Excellence Awards 2025',
-  'ZimTrade',
-  'Women in Financial Markets Conference',
+  'ZimTrade Conference',
+  'Women in Financial Markets Indaba',
+  'Tech Fusion 2025',
+  'Malawi Marketing Excellence Awards',
   'ZTN Prime · Thriving Heels',
 ]

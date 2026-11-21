@@ -120,16 +120,25 @@ export function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <span className={open ? 'hidden' : 'hidden sm:block'}>
-              <Button
-                to="/contact"
-                variant={onDark ? 'light' : 'berry'}
-                className="whitespace-nowrap !px-6 !py-3 !text-[0.66rem] hover:!translate-y-0"
-                icon="arrow"
-              >
-                Work With Me
-              </Button>
-            </span>
+            <ul className={open ? 'hidden' : 'hidden items-center gap-2 sm:flex'} aria-label="Social media">
+              {socialLinks.map((s) => (
+                <li key={s.network}>
+                  <a
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${s.label} (opens in a new tab)`}
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-300 ${
+                      onDark
+                        ? 'border-white/25 text-ivory/85 hover:border-ivory hover:bg-ivory hover:text-plum'
+                        : 'border-plum/20 text-plum/80 hover:border-berry hover:bg-berry hover:text-ivory'
+                    }`}
+                  >
+                    <SocialIcon network={s.network} className="h-4 w-4" />
+                  </a>
+                </li>
+              ))}
+            </ul>
             <button
               ref={toggleRef}
               type="button"

@@ -39,7 +39,7 @@ export function Footer() {
             <a href={`mailto:${contact.email}`} className="link-underline text-sm text-ivory/80 hover:text-ivory">
               {contact.email}
             </a>
-            <p className="mt-2 text-sm text-ivory/60">{contact.location}</p>
+            {contact.location && <p className="mt-2 text-sm text-ivory/60">{contact.location}</p>}
             <ul className="mt-6 flex gap-3">
               {socialLinks.map((s) => (
                 <li key={s.network}>

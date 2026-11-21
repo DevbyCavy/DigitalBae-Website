@@ -22,14 +22,14 @@ export default function Masterclasses() {
     <>
       <Seo
         title="Masterclasses"
-        description="Premium masterclasses from Digital Bae on personal branding, leadership through digital change, the future of work and entrepreneurship."
+        description="The Social Capital Method™ and other masterclasses from Taffy L. Gotora (Digital Bae) on influence, strategic relationships, personal branding and digital transformation."
       />
 
       <PageHero
         eyebrow="Masterclasses"
         title={<>Learning, <em>elevated.</em></>}
         intro="Premium, practical learning for professionals ready to grow their influence and lead with confidence in a digital world."
-        aside={<SampleBadge className="mt-6">Courses are placeholders, coming soon</SampleBadge>}
+        aside={<SampleBadge className="mt-6">Flagship confirmed; other courses are placeholders</SampleBadge>}
       />
 
       {/* Overview */}
@@ -63,7 +63,7 @@ export default function Masterclasses() {
         <Container className="relative">
           <SectionHeading
             eyebrow="The Collection"
-            title={<span id="all-courses">Upcoming <em>masterclasses</em></span>}
+            title={<span id="all-courses">More <em>masterclasses</em></span>}
             intro="Registration is by enquiry while courses are in development. Register your interest to be the first to know."
           />
           <RevealGroup className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -88,11 +88,11 @@ export default function Masterclasses() {
             <SectionHeading eyebrow="Your Instructor" title={<span id="instructor-title">Taught by <em>Digital Bae</em></span>} />
             <Reveal delay={0.1}>
               <p className="mt-8 text-lg leading-relaxed text-charcoal/75">
-                Every masterclass is designed and led by {owner.name}, author, multi-award-winning digital marketer and speaker, bringing together a perspective on digital
-                transformation, leadership and personal branding with a warm, direct teaching style.
+                Every masterclass is designed and led by {owner.name}: a strategic digital marketing executive, certified AI practitioner and trainer,
+                and former lecturer in digital marketing at the Marketers Association of Zimbabwe.
               </p>
               <p className="mt-5 leading-relaxed text-charcoal/70">
-                [Instructor introduction: teaching experience, approach and the kind of results participants can expect. To be supplied by the brand owner.]
+                Expect clarity, fresh perspectives and an unapologetic focus on results, whether the room is a leadership team, a corporate cohort or a community of founders.
               </p>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button to="/contact?category=masterclasses">Register Interest</Button>

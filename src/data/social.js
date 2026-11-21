@@ -1,7 +1,6 @@
-// Social profiles. Replace `href` with real profile URLs; set to '' to hide a network.
+// Social profiles supplied by the brand owner. Set `href` to '' to hide a network.
 export const socialLinks = [
-  { network: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/', placeholder: true },
-  { network: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/', placeholder: true },
-  { network: 'x', label: 'X', href: 'https://x.com/', placeholder: true },
-  { network: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/', placeholder: true },
+  { network: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/in/taffylgotora' },
+  { network: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/share/19vgCFqLUJ/' },
+  { network: 'x', label: 'X (Twitter)', href: 'https://x.com/TaffyLGotora' },
 ].filter((s) => s.href)

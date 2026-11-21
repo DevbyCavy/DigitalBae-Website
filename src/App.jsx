@@ -6,6 +6,7 @@ import { RouteError } from './pages/RouteError'
 
 import Home from './pages/Home' // eager: the landing page renders without a loading step
 const About = lazy(() => import('./pages/About'))
+const Influence = lazy(() => import('./pages/Influence'))
 const Speaking = lazy(() => import('./pages/Speaking'))
 const Masterclasses = lazy(() => import('./pages/Masterclasses'))
 const Insights = lazy(() => import('./pages/Insights'))
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <About /> },
+      { path: 'influence', element: <Influence /> },
       { path: 'speaking', element: <Speaking /> },
       { path: 'masterclasses', element: <Masterclasses /> },
       { path: 'insights', element: <Insights /> },
