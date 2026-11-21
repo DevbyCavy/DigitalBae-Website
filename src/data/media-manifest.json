@@ -1,0 +1,68 @@
+{
+  "awards-evening": {
+    "src": "/images/awards-evening.jpg",
+    "srcSet": "/images/awards-evening-800.webp 800w, /images/awards-evening-1600.webp 980w",
+    "width": 980,
+    "height": 1280
+  },
+  "awards-shelf": {
+    "src": "/images/awards-shelf.jpg",
+    "srcSet": "/images/awards-shelf-800.webp 800w, /images/awards-shelf-1600.webp 1152w",
+    "width": 1152,
+    "height": 532
+  },
+  "event-ad-day-zambia": {
+    "src": "/images/event-ad-day-zambia.jpg",
+    "srcSet": "/images/event-ad-day-zambia-800.webp 800w, /images/event-ad-day-zambia-1600.webp 1280w",
+    "width": 1280,
+    "height": 853
+  },
+  "event-ai-talk": {
+    "src": "/images/event-ai-talk.jpg",
+    "srcSet": "/images/event-ai-talk-800.webp 800w, /images/event-ai-talk-1600.webp 960w",
+    "width": 960,
+    "height": 1280
+  },
+  "event-imm-2024": {
+    "src": "/images/event-imm-2024.jpg",
+    "srcSet": "/images/event-imm-2024-800.webp 800w, /images/event-imm-2024-1600.webp 989w",
+    "width": 989,
+    "height": 1080
+  },
+  "event-imm-podium": {
+    "src": "/images/event-imm-podium.jpg",
+    "srcSet": "/images/event-imm-podium-800.webp 800w, /images/event-imm-podium-1600.webp 1280w",
+    "width": 1280,
+    "height": 853
+  },
+  "event-women-financial-markets": {
+    "src": "/images/event-women-financial-markets.jpg",
+    "srcSet": "/images/event-women-financial-markets-800.webp 800w, /images/event-women-financial-markets-1600.webp 960w",
+    "width": 960,
+    "height": 1280
+  },
+  "event-zimtrade-panel": {
+    "src": "/images/event-zimtrade-panel.jpg",
+    "srcSet": "/images/event-zimtrade-panel-800.webp 800w, /images/event-zimtrade-panel-1600.webp 1280w",
+    "width": 1280,
+    "height": 1136
+  },
+  "portrait-black": {
+    "src": "/images/portrait-black.jpg",
+    "srcSet": "/images/portrait-black-800.webp 800w, /images/portrait-black-1600.webp 1122w",
+    "width": 1122,
+    "height": 1402
+  },
+  "portrait-full": {
+    "src": "/images/portrait-full.jpg",
+    "srcSet": "/images/portrait-full-800.webp 800w, /images/portrait-full-1600.webp 1365w",
+    "width": 1365,
+    "height": 2048
+  },
+  "portrait-seated": {
+    "src": "/images/portrait-seated.jpg",
+    "srcSet": "/images/portrait-seated-800.webp 800w, /images/portrait-seated-1600.webp 1024w",
+    "width": 1024,
+    "height": 1280
+  }
+}

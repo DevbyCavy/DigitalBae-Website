@@ -1,0 +1,18 @@
+# dependencies & build output
+node_modules
+dist
+dist-ssr
+
+# local environment (never commit; VITE_* values end up public anyway, but keep config local)
+.env
+.env.local
+.env.*.local
+
+# logs & OS/editor clutter
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea

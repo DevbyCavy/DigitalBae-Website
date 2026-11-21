@@ -1,0 +1,14 @@
+{
+  "name": "Digital Bae",
+  "short_name": "Digital Bae",
+  "description": "The platform of Tafadzwa L. Gotora: author, digital marketer and speaker.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F3",
+  "theme_color": "#2E1729",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
