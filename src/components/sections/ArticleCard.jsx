@@ -20,7 +20,7 @@ export function ArticleCard({ article, index }) {
       </h3>
       <p className="mt-4 flex-1 leading-relaxed text-charcoal/70">{article.excerpt}</p>
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-        <time dateTime={article.date} className="text-sm text-charcoal/70">{formatDate(article.date)}</time>
+        {article.date ? <time dateTime={article.date} className="text-sm text-charcoal/70">{formatDate(article.date)}</time> : <span className="label-ui text-[0.62rem] text-berry">Read article</span>}
         <div className="flex items-center gap-3">
           {article.sample && <SampleBadge />}
           <span className="flex h-9 w-9 items-center justify-center rounded-full border border-plum/15 text-plum transition-all duration-500 group-hover:border-berry group-hover:bg-berry group-hover:text-ivory">

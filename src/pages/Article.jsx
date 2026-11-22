@@ -91,13 +91,13 @@ export default function Article() {
         description={article.excerpt}
         type="article"
         noindex={article.sample}
-        article={{ publishedTime: article.date, section: article.category }}
+        article={{ publishedTime: article.date || undefined, section: article.category }}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'Article',
           headline: article.title,
           description: article.excerpt,
-          datePublished: article.date,
+          ...(article.date && { datePublished: article.date }),
           articleSection: article.category,
           author: { '@type': 'Person', name: 'Taffy L. Gotora' },
           publisher: { '@type': 'Organization', name: 'Digital Bae' },
@@ -134,8 +134,8 @@ export default function Article() {
               {article.excerpt}
             </motion.p>
             <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-y border-plum/15 py-5 text-sm text-charcoal/70">
-              <span className="font-semibold text-plum">Digital Bae</span>
-              <time dateTime={article.date}>{formatDate(article.date)}</time>
+              <span className="font-semibold text-plum">Taffy L. Gotora</span>
+              {article.date && <time dateTime={article.date}>{formatDate(article.date)}</time>}
               <span>{article.readingTime} min read</span>
               {article.sample && <SampleBadge>Sample article</SampleBadge>}
             </div>
@@ -148,6 +148,9 @@ export default function Article() {
               <Block key={i} block={block} />
             ))}
           </div>
+          {article.signoff && (
+            <p className="mt-10 font-serif text-2xl italic text-berry">&mdash; {article.signoff}</p>
+          )}
           <Ornament className="my-14" />
           <ShareLinks title={article.title} />
         </Container>

@@ -28,14 +28,13 @@ export default function Insights() {
     <>
       <Seo
         title="Insights"
-        description="Articles, opinions and reflections from Digital Bae on digital transformation, leadership, innovation, personal growth and entrepreneurship."
+        description="Thought leadership from Taffy L. Gotora (Digital Bae) on leadership, innovation, personal branding and entrepreneurship."
       />
 
       <PageHero
         eyebrow="Insights"
         title={<>Notes on a <em>changing</em> world.</>}
         intro="Professional reflections, opinions and industry commentary, written to help you think clearly and act boldly."
-        aside={<SampleBadge className="mt-6">All articles are sample content</SampleBadge>}
       />
 
       {/* Featured article */}
@@ -54,8 +53,12 @@ export default function Insights() {
                 <div className="flex flex-col justify-between p-8 md:col-span-7 md:p-14">
                   <div>
                     <div className="mb-6 flex flex-wrap items-center gap-4 text-sm text-ivory/60">
-                      <time dateTime={featured.date}>{formatDate(featured.date)}</time>
-                      <span aria-hidden="true">&middot;</span>
+                      {featured.date && (
+                        <>
+                          <time dateTime={featured.date}>{formatDate(featured.date)}</time>
+                          <span aria-hidden="true">&middot;</span>
+                        </>
+                      )}
                       <span>{featured.readingTime} min read</span>
                       {featured.sample && <SampleBadge tone="dark">Sample</SampleBadge>}
                     </div>
