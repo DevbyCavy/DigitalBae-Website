@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Check, ArrowRight } from 'lucide-react'
 import { masterclassStatus } from '../../data/masterclasses'
-import { SampleBadge } from '../ui/primitives'
 
 /** Editorial masterclass card. Enquiry only: no payments are taken on this site. */
 export function MasterclassCard({ course, index = 0, variant = 'default' }) {
@@ -32,7 +31,6 @@ export function MasterclassCard({ course, index = 0, variant = 'default' }) {
           >
             {masterclassStatus[course.status]}
           </span>
-          {course.placeholder && <SampleBadge tone={isFeature ? 'dark' : 'light'}>Placeholder course</SampleBadge>}
         </div>
       </div>
 

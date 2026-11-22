@@ -19,6 +19,7 @@ export default function Influence() {
 
       <PageHero
         eyebrow="Areas of Influence"
+        titleClassName="text-[clamp(1.45rem,4.6vw,4.4rem)] leading-[0.95]"
         title={<>Digital intelligence, <em>strategic influence.</em></>}
         intro={positioning.statement}
       />
@@ -45,9 +46,9 @@ export default function Influence() {
           <SectionHeading eyebrow="The six pillars" title={<span id="pillars-title">The pillars of <em>Digital Bae</em></span>} intro={positioning.line} />
           <ol className="mt-16">
             {expertise.map((p, i) => (
-              <Reveal as="li" key={p.id} delay={i * 0.03} className="grid gap-6 border-t border-plum/15 py-12 last:border-b md:grid-cols-12 md:gap-10">
-                <span className="display text-3xl text-berry/85 md:col-span-1">{p.number}</span>
-                <div className="md:col-span-5">
+              <Reveal as="li" key={p.id} delay={i * 0.03} className="grid gap-6 border-t border-plum/15 py-12 last:border-b md:grid-cols-12 md:gap-x-10">
+                <span className="display text-3xl text-berry/85 md:col-span-12 xl:col-span-1">{p.number}</span>
+                <div className="md:col-span-6 xl:col-span-5">
                   <h3 className="text-[1.6rem] leading-tight md:text-3xl">{p.title}</h3>
                   {p.signature && (
                     <p className="eyebrow mt-4 inline-flex rounded-full bg-plum px-3 py-1.5 !text-[0.6rem] text-blush">Signature IP · {p.signature}</p>

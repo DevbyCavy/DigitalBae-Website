@@ -26,6 +26,8 @@
 }
 
 @layer base {
+  /* Safety net: a heading word too long for its column wraps instead of spilling out or being clipped. */
+  h1, h2, h3 { overflow-wrap: break-word; }
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

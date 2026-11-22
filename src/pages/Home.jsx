@@ -361,8 +361,8 @@ function MasterclassPromo() {
   return (
     <section className="relative overflow-hidden bg-blush/40 py-24 md:py-32" aria-labelledby="masterclass-title">
       <Glow />
-      <Container className="relative grid items-center gap-14 lg:grid-cols-12">
-        <div className="lg:col-span-5">
+      <Container className="relative grid items-center gap-14 xl:grid-cols-12">
+        <div className="xl:col-span-6">
           <SectionHeading
             eyebrow="Masterclasses"
             title={<span id="masterclass-title">Lead the <em>digital</em> conversation</span>}
@@ -372,7 +372,7 @@ function MasterclassPromo() {
             <Button to="/masterclasses" variant="outline">View Masterclasses</Button>
           </Reveal>
         </div>
-        <Reveal delay={0.15} className="lg:col-span-6 lg:col-start-7">
+        <Reveal delay={0.15} className="xl:col-span-6 xl:col-start-7">
           <MasterclassCard course={featured} variant="feature" />
         </Reveal>
       </Container>

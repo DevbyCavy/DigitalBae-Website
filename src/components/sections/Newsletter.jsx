@@ -47,10 +47,10 @@ export function Newsletter() {
   const mailto = `mailto:${contact.email}?subject=${encodeURIComponent('Newsletter sign-up')}&body=${encodeURIComponent(`Please add ${email || 'my email'} to The Digital Bae Letter.`)}`
 
   return (
-    <div className="glass-dark relative overflow-hidden rounded-[2rem] p-7 md:p-10">
+    <div className="glass-dark relative overflow-hidden rounded-[2rem] p-6 sm:p-7 md:p-10">
       <div aria-hidden="true" className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-berry/35 blur-3xl" />
-      <div className="relative grid gap-8 lg:grid-cols-2 lg:items-end">
-        <div>
+      <div className="relative grid grid-cols-[minmax(0,1fr)] gap-8 lg:grid-cols-2 lg:items-end">
+        <div className="min-w-0">
           <p className="eyebrow flex items-center gap-2 text-berry-soft">
             <Sparkle className="twinkle h-3 w-3 text-gold" /> The Digital Bae Letter
           </p>
@@ -63,9 +63,10 @@ export function Newsletter() {
           </p>
         </div>
 
-        <form onSubmit={onSubmit} noValidate aria-label="Newsletter sign-up">
+        <form onSubmit={onSubmit} noValidate aria-label="Newsletter sign-up" className="min-w-0">
           <label htmlFor="newsletter-email" className="sr-only">Email address</label>
-          <div className={`flex items-center gap-2 rounded-full border bg-white/10 p-1.5 pl-5 transition-colors focus-within:border-blush ${error ? 'border-[#F19BB5]' : 'border-white/20'}`}>
+          <div className={`flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-2 sm:rounded-full sm:border sm:bg-white/10 sm:p-1.5 sm:pl-5 sm:transition-colors sm:focus-within:border-blush ${error ? 'sm:border-[#F19BB5]' : 'sm:border-white/20'}`}>
+            <div className={`flex min-w-0 flex-1 items-center gap-2 rounded-full border bg-white/10 px-5 transition-colors focus-within:border-blush sm:border-0 sm:bg-transparent sm:px-0 ${error ? 'border-[#F19BB5]' : 'border-white/20'}`}>
             <Mail aria-hidden="true" className="h-4 w-4 shrink-0 text-ivory/60" strokeWidth={1.5} />
             <input
               id="newsletter-email"
@@ -76,12 +77,13 @@ export function Newsletter() {
               aria-invalid={Boolean(error)}
               aria-describedby={error ? 'newsletter-error' : 'newsletter-note'}
               placeholder="you@example.com"
-              className="min-w-0 flex-1 bg-transparent py-2.5 text-ivory placeholder:text-ivory/45 focus:outline-none"
+              className="w-full min-w-0 flex-1 bg-transparent py-3 text-base text-ivory placeholder:text-ivory/45 focus:outline-none sm:py-2.5"
             />
+            </div>
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="label-ui flex shrink-0 items-center gap-2 rounded-full bg-ivory px-5 py-3 text-[0.62rem] text-plum transition-colors hover:bg-blush disabled:opacity-60"
+              className="label-ui flex shrink-0 items-center justify-center gap-2 rounded-full bg-ivory px-5 py-3.5 text-[0.62rem] text-plum transition-colors hover:bg-blush disabled:opacity-60 sm:py-3"
             >
               {status === 'submitting' ? <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" /> : <>Subscribe <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" /></>}
             </button>
@@ -91,8 +93,8 @@ export function Newsletter() {
             <label htmlFor="newsletter-hp-field">Leave this field empty</label>
             <input id="newsletter-hp-field" name="hp_field" type="text" tabIndex={-1} autoComplete="new-password" data-lpignore="true" data-1p-ignore value={hp} onChange={(e) => setHp(e.target.value)} />
           </div>
-          {error && <p id="newsletter-error" className="mt-2 pl-5 text-sm text-[#F7B8CB]">{error}</p>}
-          <p id="newsletter-note" className="mt-3 pl-5 text-xs text-ivory/55">
+          {error && <p id="newsletter-error" className="mt-2 text-sm text-[#F7B8CB] sm:pl-5">{error}</p>}
+          <p id="newsletter-note" className="mt-3 text-xs text-ivory/55 sm:pl-5">
             By subscribing you agree to our <Link to="/privacy" className="underline underline-offset-2 hover:text-ivory">Privacy Policy</Link>.
           </p>
           <div role="status" aria-live="polite">

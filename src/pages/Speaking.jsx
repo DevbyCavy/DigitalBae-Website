@@ -6,7 +6,6 @@ import { Container, Button, SectionHeading, Glow } from '../components/ui/primit
 import { Reveal, RevealGroup, RevealItem } from '../components/ui/Reveal'
 import { Portrait } from '../components/ui/Portrait'
 import { PageHero } from '../components/sections/PageHero'
-import { Testimonials } from '../components/sections/Testimonials'
 import { CtaBanner } from '../components/sections/CtaBanner'
 import { portraits } from '../data/site'
 import { speakingTopics, speakingFormats, featuredEngagements } from '../data/speaking'
@@ -156,8 +155,6 @@ export default function Speaking() {
           </div>
         </Container>
       </section>
-
-      <Testimonials eyebrow="Testimonials" title={<>What organisers <em>say</em></>} />
 
       <CtaBanner
         eyebrow="Booking Enquiries"

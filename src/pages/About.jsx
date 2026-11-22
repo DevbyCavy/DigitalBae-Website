@@ -176,7 +176,7 @@ export default function About() {
               {about.milestones.map((m, i) => (
                 <RevealItem key={i} className="glass-dark rounded-[1.75rem] p-6 md:p-8">
                   <dt className="sr-only">{m.label}</dt>
-                  <dd className="display text-3xl text-blush md:text-[2.6rem]">{m.figure}</dd>
+                  <dd className="display text-[1.6rem] text-blush sm:text-3xl md:text-[2.6rem]">{m.figure}</dd>
                   <dd className="mt-3 text-sm leading-snug text-ivory/70">{m.label}</dd>
                 </RevealItem>
               ))}

@@ -27,7 +27,7 @@ function toWeb3Forms({ name, email, category, subject, message, hpField }) {
     name,
     email,
     'Enquiry type': category,
-    Subject: subject,
+    Topic: subject,
     message,
     botcheck: hpField || '', // honeypot: Web3Forms rejects submissions where this is filled
   }

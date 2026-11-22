@@ -4,7 +4,7 @@ import { Container, Eyebrow, Glow } from '../ui/primitives'
 const ease = [0.22, 1, 0.36, 1]
 
 /** Editorial page opener for inner pages. */
-export function PageHero({ eyebrow, title, intro, children, aside }) {
+export function PageHero({ eyebrow, title, intro, children, aside, titleClassName = 'text-display' }) {
   return (
     <section className="relative overflow-hidden pb-16 pt-36 md:pb-24 md:pt-48">
       <Glow />
@@ -14,7 +14,7 @@ export function PageHero({ eyebrow, title, intro, children, aside }) {
             <Eyebrow tone="gold" className="mb-8">{eyebrow}</Eyebrow>
           </motion.div>
           <motion.h1
-            className="text-display"
+            className={titleClassName}
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease, delay: 0.1 }}

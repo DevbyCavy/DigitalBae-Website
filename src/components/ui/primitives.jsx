@@ -92,8 +92,8 @@ export function SectionHeading({ eyebrow, title, intro, align = 'left', tone = '
       )}
       <motion.h2
         className={`text-headline ${tone === 'light' ? '!text-ivory' : ''}`}
-        initial={{ opacity: 0, y: '0.6em', clipPath: 'inset(0 0 100% 0)' }}
-        whileInView={{ opacity: 1, y: 0, clipPath: 'inset(-20% -5% -20% -5%)' }}
+        initial={{ opacity: 0, y: '0.6em', clipPath: 'inset(0 -50% 100% -50%)' }}
+        whileInView={{ opacity: 1, y: 0, clipPath: 'inset(-20% -50% -20% -50%)' }}
         viewport={{ once: true, margin: '0px 0px -10% 0px' }}
         transition={{ duration: 1, ease: revealEase, delay: 0.08 }}
       >

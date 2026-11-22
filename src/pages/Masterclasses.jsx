@@ -1,5 +1,5 @@
 import { Seo } from '../components/ui/Seo'
-import { Container, Button, SectionHeading, SampleBadge, Glow } from '../components/ui/primitives'
+import { Container, Button, SectionHeading, Glow } from '../components/ui/primitives'
 import { Reveal, RevealGroup, RevealItem } from '../components/ui/Reveal'
 import { Portrait } from '../components/ui/Portrait'
 import { PageHero } from '../components/sections/PageHero'
@@ -29,13 +29,12 @@ export default function Masterclasses() {
         eyebrow="Masterclasses"
         title={<>Learning, <em>elevated.</em></>}
         intro="Premium, practical learning for professionals ready to grow their influence and lead with confidence in a digital world."
-        aside={<SampleBadge className="mt-6">Flagship confirmed; other courses are placeholders</SampleBadge>}
       />
 
       {/* Overview */}
       <section className="pb-20">
         <Container>
-          <RevealGroup className="grid gap-5 md:grid-cols-3">
+          <RevealGroup className="grid gap-5 lg:grid-cols-3">
             {pillars.map((p, i) => (
               <RevealItem key={p.title} className="glass rounded-[2rem] p-8 md:p-10">
                 <span className="display text-2xl text-berry/80">0{i + 1}</span>
