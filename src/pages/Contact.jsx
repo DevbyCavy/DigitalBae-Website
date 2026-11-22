@@ -113,7 +113,7 @@ export default function Contact() {
 
     setStatus('submitting')
     try {
-      await submitEnquiry({ ...values, category: categoryLabel, company: undefined })
+      await submitEnquiry({ ...values, category: categoryLabel })
       markSubmitted('contact')
       trackEvent('enquiry_submitted', { category: values.category })
       setStatus('success')

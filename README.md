@@ -49,12 +49,16 @@ Remove a placeholder badge by setting its `placeholder`/`sample` flag to `false`
 
 ## Contact form
 
-There is no backend. The form validates every field and is honest about delivery:
+Enquiries are delivered by [Web3Forms](https://web3forms.com) to **hello@digitalbae.online**. No server code is needed, so it works with Hostinger's static Vite deployment.
 
-- **No endpoint configured (default):** after validation the visitor is told the message has **not** been sent, and gets a one-click "Open in Email" button with everything already filled in.
-- **Endpoint configured:** copy `.env.example` to `.env` and set `VITE_CONTACT_ENDPOINT` to any service that accepts a JSON POST (Formspree, Basin, Getform, or your own API). A success message is shown only when the service returns a 2xx response, and failures show an error with the email fallback.
+- The access key is **not stored in the repository**. Set `VITE_WEB3FORMS_KEY` (and `VITE_SITE_URL`) in Hostinger: Websites > digitalbae.online > Deployments > Environment variables, then redeploy. For local production builds, put them in a git-ignored `.env.production`. To change the receiving address, update it in the Web3Forms dashboard.
+- The email subject reads `[Digital Bae] <Enquiry type>: <Subject>`, and **Reply** goes straight to the visitor.
+- A success message is shown only when Web3Forms confirms delivery; failures show an error with a one-click "email us directly" fallback.
+- Spam protection: a honeypot field (also passed to Web3Forms as `botcheck`), a 3-second time trap and a 60-second cooldown.
+- In `npm run dev` the key isn't loaded, so the form honestly says nothing was sent and offers the email fallback. Use `npm run build && npm run preview` to test real sending.
+- Alternatively, set `VITE_CONTACT_ENDPOINT` to any service that accepts a JSON POST.
 
-The form includes a honeypot field for basic spam filtering. Links like `/contact?category=speaking` pre-select the enquiry type.
+Links like `/contact?category=speaking` pre-select the enquiry type.
 
 ## Project structure
 
@@ -115,7 +119,7 @@ For a sub-folder deployment (e.g. `http://localhost/digitalbae/`), set `base: '/
 | Sitemap & robots.txt | Generated on every build (`npm run seo`) | Set `VITE_SITE_URL` to the real domain before building |
 | Alt text, colour contrast, keyboard access | axe-core: 0 violations on every page (desktop + mobile) | Write alt text for any new photos in `src/data/media.js` |
 | Images | WebP + responsive sizes; videos load on demand; hero video skipped on mobile/data-saver | — |
-| Forms | Validation, honeypot, 3-second time-trap, 60-second resubmit cooldown | Set `VITE_CONTACT_ENDPOINT` / `VITE_NEWSLETTER_ENDPOINT`, enable the provider's server-side spam filter |
+| Forms | Validation, honeypot, 3-second time-trap, 60-second resubmit cooldown | Contact: Web3Forms key set. Newsletter: set `VITE_NEWSLETTER_ENDPOINT`, enable the provider's server-side spam filter |
 | Newsletter | Footer sign-up | Connect a provider (see `.env.example`) |
 | Social links | Placeholder URLs | Replace in `src/data/social.js` |
 | Primary call to action | "Work With Me" → `/contact` everywhere | — |
