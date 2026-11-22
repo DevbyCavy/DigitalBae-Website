@@ -40,10 +40,10 @@ export const eventPhotos = [
     role: 'Panel',
   },
   {
-    id: 'imm-podium',
-    image: photo('event-imm-podium', 'Taffy at the podium at Sunbird Nkopola Lodge during the Institute of Marketing in Malawi conference'),
-    event: 'IMM Conference, Sunbird Nkopola Lodge',
-    detail: 'Innovate: leveraging technology',
+    id: 'ad-day-stage',
+    image: photo('event-ad-day-stage', 'Taffy on stage with fellow guests at AD-Day, presented by Africast'),
+    event: 'AD-Day, presented by Africast',
+    detail: 'On stage with fellow speakers',
     role: 'Speaker',
   },
   {

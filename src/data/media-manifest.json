@@ -11,6 +11,12 @@
     "width": 1152,
     "height": 532
   },
+  "event-ad-day-stage": {
+    "src": "/images/event-ad-day-stage.jpg",
+    "srcSet": "/images/event-ad-day-stage-800.webp 700w",
+    "width": 700,
+    "height": 1054
+  },
   "event-ad-day-zambia": {
     "src": "/images/event-ad-day-zambia.jpg",
     "srcSet": "/images/event-ad-day-zambia-800.webp 800w, /images/event-ad-day-zambia-1600.webp 1280w",
@@ -28,12 +34,6 @@
     "srcSet": "/images/event-imm-2024-800.webp 800w, /images/event-imm-2024-1600.webp 989w",
     "width": 989,
     "height": 1080
-  },
-  "event-imm-podium": {
-    "src": "/images/event-imm-podium.jpg",
-    "srcSet": "/images/event-imm-podium-800.webp 800w, /images/event-imm-podium-1600.webp 1280w",
-    "width": 1280,
-    "height": 853
   },
   "event-women-financial-markets": {
     "src": "/images/event-women-financial-markets.jpg",
