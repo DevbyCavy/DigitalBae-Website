@@ -88,8 +88,8 @@ export function Newsletter() {
           </div>
           {/* honeypot */}
           <div aria-hidden="true" className="absolute left-[-9999px]">
-            <label htmlFor="newsletter-website">Website</label>
-            <input id="newsletter-website" tabIndex={-1} autoComplete="off" value={hp} onChange={(e) => setHp(e.target.value)} />
+            <label htmlFor="newsletter-hp-field">Leave this field empty</label>
+            <input id="newsletter-hp-field" name="hp_field" type="text" tabIndex={-1} autoComplete="new-password" data-lpignore="true" data-1p-ignore value={hp} onChange={(e) => setHp(e.target.value)} />
           </div>
           {error && <p id="newsletter-error" className="mt-2 pl-5 text-sm text-[#F7B8CB]">{error}</p>}
           <p id="newsletter-note" className="mt-3 pl-5 text-xs text-ivory/55">

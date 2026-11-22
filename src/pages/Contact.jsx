@@ -69,11 +69,11 @@ export default function Contact() {
     category: initialCategory,
     subject: course ? `Interest in: ${course.title}` : '',
     message: '',
-    company: '', // honeypot
+    hpField: '', // honeypot (deliberately not named like anything browsers autofill)
   })
   const [errors, setErrors] = useState({})
   const [touched, setTouched] = useState({})
-  const [status, setStatus] = useState('idle') // idle | submitting | success | not-configured | error | blocked
+  const [status, setStatus] = useState('idle') // idle | invalid | submitting | success | not-configured | error | blocked
   const formRef = useRef(null)
   const startedAt = useRef(startTimer())
 
@@ -100,11 +100,15 @@ export default function Contact() {
     setErrors(found)
     setTouched({ name: true, email: true, category: true, subject: true, message: true })
     if (Object.keys(found).length) {
+      setStatus('invalid')
       const first = Object.keys(found)[0]
-      formRef.current?.querySelector(`[name="${first}"]`)?.focus()
+      const el = formRef.current?.querySelector(`[name="${first}"]`)
+      // Bring the first problem into view (the enquiry-type radios are visually hidden, so scroll their group).
+      ;(first === 'category' ? el?.closest('fieldset') : el)?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      el?.focus({ preventScroll: true })
       return
     }
-    const spam = checkSubmission({ honeypot: values.company, startedAt: startedAt.current, formKey: 'contact' })
+    const spam = checkSubmission({ honeypot: values.hpField, startedAt: startedAt.current, formKey: 'contact' })
     if (spam === 'bot') return
     if (spam) {
       setStatus('blocked')
@@ -251,8 +255,8 @@ export default function Contact() {
 
                 {/* Honeypot: hidden from people, tempting to bots */}
                 <div aria-hidden="true" className="absolute left-[-9999px]">
-                  <label htmlFor="company">Company</label>
-                  <input id="company" name="company" tabIndex={-1} autoComplete="off" value={values.company} onChange={update('company')} />
+                  <label htmlFor="contact-hp-field">Leave this field empty</label>
+                  <input id="contact-hp-field" name="hp_field" type="text" tabIndex={-1} autoComplete="new-password" data-lpignore="true" data-1p-ignore value={values.hpField} onChange={update('hpField')} />
                 </div>
 
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
@@ -279,6 +283,13 @@ export default function Contact() {
                         <p className="font-semibold text-plum">Your message looks good, but it has not been sent yet.</p>
                         <p className="mt-1">Online sending is not set up on this site. Open it in your email app to send it, with everything already filled in:</p>
                         <Button href={mailto} variant="outline" className="mt-4 !px-5 !py-3" icon="external">Open in Email</Button>
+                      </motion.div>
+                    )}
+                    {status === 'invalid' && Object.keys(errors).length > 0 && (
+                      <motion.div key="i" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}
+                        className="flex gap-3 rounded-2xl border-l-4 border-[#9B2C4B] bg-white p-5 text-sm leading-relaxed text-charcoal/80">
+                        <AlertCircle aria-hidden="true" strokeWidth={1.5} className="h-5 w-5 shrink-0 text-[#9B2C4B]" />
+                        <span>Please check the highlighted {Object.keys(errors).length === 1 ? 'field' : 'fields'}: {Object.values(errors).join(' ')}</span>
                       </motion.div>
                     )}
                     {status === 'blocked' && (

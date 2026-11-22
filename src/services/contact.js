@@ -18,7 +18,7 @@ export class NotConfiguredError extends Error {
 
 export const isContactConfigured = () => Boolean(web3formsKey || customEndpoint)
 
-function toWeb3Forms({ name, email, category, subject, message, company }) {
+function toWeb3Forms({ name, email, category, subject, message, hpField }) {
   return {
     access_key: web3formsKey,
     subject: `[Digital Bae] ${category}: ${subject}`,
@@ -29,7 +29,7 @@ function toWeb3Forms({ name, email, category, subject, message, company }) {
     'Enquiry type': category,
     Subject: subject,
     message,
-    botcheck: company || '', // honeypot: Web3Forms rejects submissions where this is filled
+    botcheck: hpField || '', // honeypot: Web3Forms rejects submissions where this is filled
   }
 }
 
