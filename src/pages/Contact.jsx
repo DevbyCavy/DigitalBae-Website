@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { AlertCircle, CheckCircle2, Info, Loader2, Mail, MapPin, Clock } from 'lucide-react'
 import { Seo } from '../components/ui/Seo'
-import { Container, Button, SampleBadge, Glow } from '../components/ui/primitives'
+import { Container, Button, Glow } from '../components/ui/primitives'
 import { Reveal } from '../components/ui/Reveal'
 import { PageHero } from '../components/sections/PageHero'
 import { SocialIcon } from '../components/ui/SocialIcon'
@@ -146,7 +146,6 @@ export default function Contact() {
             <div className="border-t border-plum/15 pt-8">
               <div className="mb-6 flex items-center justify-between gap-4">
                 <h2 className="text-2xl">Details</h2>
-                {contact.placeholder && <SampleBadge>Some details to confirm</SampleBadge>}
               </div>
               <ul className="space-y-6 text-charcoal/80">
                 <li className="flex gap-4">
@@ -162,12 +161,14 @@ export default function Contact() {
                     {contact.location}
                   </li>
                 )}
-                <li className="flex gap-4 text-sm">
-                  <Clock aria-hidden="true" strokeWidth={1.25} className="h-5 w-5 shrink-0 text-berry" />
-                  {contact.responseTime}
-                </li>
+                {contact.responseTime && (
+                  <li className="flex gap-4 text-sm">
+                    <Clock aria-hidden="true" strokeWidth={1.25} className="h-5 w-5 shrink-0 text-berry" />
+                    {contact.responseTime}
+                  </li>
+                )}
               </ul>
-              <p className="mt-8 text-sm text-charcoal/70">{contact.representation}</p>
+              {contact.representation && <p className="mt-8 text-sm text-charcoal/70">{contact.representation}</p>}
 
               <div className="mt-12 border-t border-plum/15 pt-8">
                 <p className="eyebrow mb-5 text-plum/85">Follow</p>

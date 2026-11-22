@@ -36,13 +36,12 @@ export const portraits = {
   black: photo('portrait-black', 'Taffy L. Gotora seated in a black suit on a leather lounge chair', 'Portrait in black'),
 }
 
-// One inbox for every kind of enquiry. Location, response time and representation are still placeholders.
+// One inbox for every kind of enquiry. Optional fields are hidden on the site while empty.
 export const contact = {
-  placeholder: true,
   email: 'hello@digitalbae.online',
   location: '', // e.g. 'Harare, Zimbabwe'. Leave empty to hide it.
-  responseTime: '[Typical response time, e.g. within 3 working days]',
-  representation: '[Agent / management contact, if applicable]',
+  responseTime: '', // e.g. 'We reply within 3 working days'
+  representation: '', // agent / management contact, if any
 }
 
 export const enquiryCategories = [
