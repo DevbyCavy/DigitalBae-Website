@@ -153,7 +153,7 @@ export default function About() {
             <Reveal className="md:col-span-5">
               <figure>
                 <Portrait image={recognition.evening} className="aspect-[4/5] rounded-[2rem]" position="center 25%" sizes="(min-width: 768px) 40vw, 100vw" />
-                <figcaption className="mt-3 text-sm text-ivory/70">Recognised at an awards evening [event to confirm]</figcaption>
+                <figcaption className="mt-3 text-sm text-ivory/70">Women&rsquo;s Outstanding Achievement Award for Digital Communication, ENZ Entrepreneurs Network of Zimbabwe</figcaption>
               </figure>
             </Reveal>
             <Reveal delay={0.1} className="flex flex-col justify-end md:col-span-7">

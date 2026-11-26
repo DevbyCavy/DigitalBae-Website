@@ -56,7 +56,7 @@ export const eventPhotos = [
 ]
 
 export const recognition = {
-  evening: photo('awards-evening', 'Taffy holding an award at an awards evening, standing with two guests'),
+  evening: photo('awards-evening', 'Taffy holding the Women’s Outstanding Achievement Award for Digital Communication from ENZ Entrepreneurs Network of Zimbabwe, standing with two guests'),
   shelf: photo('awards-shelf', 'A shelf of framed certificates and award trophies'),
 }
 
